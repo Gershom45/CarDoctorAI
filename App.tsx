@@ -28,10 +28,10 @@ const client = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 const VoiceThemeSelector = ({ selectedVoice, onVoiceSelected }) => {
   const voiceThemes = {
-    alloy: { color: '#4A90E2', icon: 'build', description: 'Technical and balanced tone' },
-    echo: { color: '#00796B', icon: 'warning', description: 'Confident and serious tone' },
-    fable: { color: '#F9A825', icon: 'local-gas-station', description: 'Friendly, helpful mechanic vibe' },
-    onyx: { color: '#37474F', icon: 'car-repair', description: 'Deep, reliable technician voice' },
+    alloy: { color: '#06d6a0', icon: 'build', description: 'Technical and balanced tone' },
+    echo: { color: '#26547c', icon: 'warning', description: 'Confident and serious tone' },
+    fable: { color: '#ef476f', icon: 'local-gas-station', description: 'Friendly, helpful mechanic vibe' },
+    onyx: { color: '#ffd166', icon: 'car-repair', description: 'Deep, reliable technician voice' },
   };
 
   return (
@@ -82,6 +82,11 @@ const App = () => {
   10. Recommend when to seek professional service.
   11. Identify parts in the photo and explain how they relate to the issue.
   12. Recommend documenting intermittent problems.
+  13. Mention whether it is safe to drive the vehicle or not based on the analysis.
+  14. Provide maintenance suggestions based on mileage, time since last service, or visible wear (e.g., belts, fluids, filters)
+  15. Offer seasonal advice if applicable (e.g., winter tire readiness, AC diagnostics in summer, battery stress in cold weather).
+  16. Use visual cues to detect neglected maintenance (e.g., corroded battery terminals, dirty air filters, fluid colors).
+  17. Guide the user through a basic self-inspection checklist (lights, wipers, brake pedal feel, leaks, smells, etc.).
 
   Tone: Professional, helpful, and concise.
   Format: Summary followed by bullet points of findings.
@@ -318,13 +323,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
     color: '#333',
     marginBottom: 5,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 15,
     color: '#666',
     marginBottom: 20,
   },
@@ -397,12 +402,12 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
   },
   analyzeButton: {
-    backgroundColor: '#607D8B',
+    backgroundColor: '#FF5722',
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 8,
     flexDirection: 'row',
-    width: '80%',
+    width: '50%',
     justifyContent: 'center',
   },
   analyzeButtonText: {
@@ -437,10 +442,10 @@ const styles = StyleSheet.create({
   audioButton: {
     backgroundColor: '#455A64',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     borderRadius: 8,
     flexDirection: 'row',
-    width: '60%',
+    width: '50%',
     justifyContent: 'center',
   },
   audioButtonText: {
