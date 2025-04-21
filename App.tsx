@@ -16,6 +16,7 @@ import * as FileSystem from 'expo-file-system';
 import { Audio } from 'expo-av';
 import { MaterialIcons } from '@expo/vector-icons';
 import { OPENAI_API_KEY } from "@env";
+import Footer from './components/Footer'
 
 // Import CarGenie image
 import CarGenie from './assets/CarGenie.png';
@@ -307,6 +308,9 @@ const App = () => {
             <Text style={styles.response}>{response}</Text>
           </View>
         )}
+        <View style={styles.footerContainer}>
+          <Footer />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -472,6 +476,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: '#333',
+  },
+  footerContainer: {
+    backgroundColor: '#f5f5f5',
+    padding: 10,
+    justifyContent: 'flex-end',
   },
 });
 
